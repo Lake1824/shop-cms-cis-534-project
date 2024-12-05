@@ -1,0 +1,48 @@
+{
+  "settings": {
+    "number_of_shards": "4",
+    "number_of_replicas": "0",
+    "translog": {
+      "durability": "async"
+    },
+    "refresh_interval": "1s",
+    "analysis": {
+      "char_filter": {
+        "punctuation_remover": {
+          "type": "pattern_replace",
+          "pattern": "[\\p{Punct}]",
+          "replacement": ""
+        }
+      },
+      "filter": {
+        "name_filter": {
+          "type": "asciifolding",
+          "preserve_original": true
+        }
+      },
+      "tokenizer": {
+        "edge_ngram_tokenizer": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 10,
+          "token_chars": [
+            "letter"
+          ]
+        }
+      },
+      "analyzer": {
+        "name_analyzer": {
+          "type": "custom",
+          "char_filter": [
+            "punctuation_remover"
+          ],
+          "tokenizer": "edge_ngram_tokenizer",
+          "filter": [
+            "lowercase",
+            "name_filter"
+          ]
+        }
+      }
+    }
+  }
+}

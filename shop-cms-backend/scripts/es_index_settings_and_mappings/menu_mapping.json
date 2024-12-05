@@ -1,0 +1,33 @@
+{
+  "dynamic": "false",
+  "properties": {
+    "id": { "type": "keyword" },
+    "restaurant_id": { "type": "keyword" },
+    "name": { "type": "text" },
+    "products": {
+      "type": "nested",
+      "properties": {
+        "name": { "type": "text", "analyzer": "name_analyzer", "fields": { "keyword": { "type": "keyword", "normalizer": "lowercase" } } },
+        "description": { "type": "text" },
+        "price": { "type": "float" },
+        "menu_category_name": { "type": "text" },
+        "addons": {
+          "type": "nested",
+          "properties": {
+            "name": { "type": "text" },
+            "price": { "type": "float" }
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "nested",
+      "properties": {
+        "name": { "type": "text" },
+        "description": { "type": "text" }
+      }
+    },
+    "created_at": { "type": "date" },
+    "updated_at": { "type": "date" }
+  }
+}

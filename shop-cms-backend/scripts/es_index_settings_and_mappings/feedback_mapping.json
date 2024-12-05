@@ -1,0 +1,12 @@
+{
+  "dynamic": "false",
+  "properties": {
+    "id": { "type": "keyword" },
+    "restaurant_id": { "type": "keyword" },
+    "rating": { "type": "short" },
+    "comment": { "type": "text" },
+    "featured": { "type": "boolean" },
+    "created_at": { "type": "date" },
+    "updated_at": { "type": "date" }
+  }
+}

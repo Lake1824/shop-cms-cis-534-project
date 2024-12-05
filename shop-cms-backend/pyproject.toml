@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "cis-534-backend"
+version = "0.1.0"
+description = ""
+authors = ["Matthew Lake <matthew_lake@fastmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+flask = "3.0.3"
+flask-cors = "5.0.0"
+elasticsearch = "7.17.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

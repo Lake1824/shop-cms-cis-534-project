@@ -1,0 +1,25 @@
+{
+  "dynamic": "false",
+  "properties": {
+    "id": { "type": "keyword" },
+    "name": { "type": "text", "analyzer": "name_analyzer", "fields": { "keyword": { "type": "keyword", "normalizer": "lowercase" } } },
+    "description": { "type": "text" },
+    "street": { "type": "text" },
+    "city": { "type": "keyword" },
+    "state": { "type": "keyword" },
+    "zipcode": { "type": "integer" },
+    "facebook_link": { "type": "text" },
+    "x_link": { "type": "text" },
+    "instagram_link": { "type": "text" },
+    "hours": {
+      "type": "nested",
+      "properties": {
+        "opening": { "type": "short" },
+        "closing": { "type": "short" },
+        "day_of_week": { "type": "keyword" }
+      }
+    },
+    "created_at": { "type": "date" },
+    "updated_at": { "type": "date" }
+  }
+}

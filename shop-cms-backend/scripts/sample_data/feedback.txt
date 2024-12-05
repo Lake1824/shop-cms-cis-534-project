@@ -1,0 +1,4 @@
+{"id":"7654e0e2247c4cf8add1","restaurant_id":"5e7e7f570b5b4c5e8494","rating":5,"comment":"Amazing dining experience! The food was exquisite and the service was top-notch.","featured":true,"created_at":"2024-01-15T12:00:00Z","updated_at":"2024-01-16T08:30:00Z"}
+{"id":"4b17faf0670a44ffb821","restaurant_id":"5e7e7f570b5b4c5e8494","rating":3,"comment":"The food was decent, but the waiting time was too long. Could improve on customer service.","featured":false,"created_at":"2024-03-20T14:30:00Z","updated_at":"2024-03-21T09:45:00Z"}
+{"id":"7654e0e2247c4cf8add2","restaurant_id":"5e7e7f570b5b4c5e8494","rating":5,"comment":"Everything was great","featured":true,"created_at":"2024-01-15T12:00:00Z","updated_at":"2024-01-16T08:30:00Z"}
+{"id":"4b17faf0670a44ffb822","restaurant_id":"5e7e7f570b5b4c5e8494","rating":1,"comment":"The food was meh. Also, could improve on customer service.","featured":false,"created_at":"2024-03-20T14:30:00Z","updated_at":"2024-03-21T09:45:00Z"}

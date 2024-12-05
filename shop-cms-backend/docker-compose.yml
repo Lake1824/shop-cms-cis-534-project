@@ -1,0 +1,56 @@
+services:
+  shop-cms-api:
+    build: .
+    container_name: shop-cms-api
+    command: "flask --app app.api run --host=0.0.0.0 --reload"
+    ports:
+      - "8000:5000"
+    volumes:
+      - ".:/usr/src/app"
+    environment:
+      - ES_HOST=elasticsearch-cluster
+      - ES_PORT=9200
+    networks:
+      - shop-cms
+
+  elasticsearch-config:
+    build: .
+    container_name: elasticsearch-config
+    command: "tail -f /dev/null"
+    networks:
+      - shop-cms
+
+  elasticsearch-cluster:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+    container_name: elasticsearch-cluster
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - shop-cms
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.10.0
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch-cluster:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - shop-cms
+
+volumes:
+  es_data:
+    driver: local
+
+networks:
+  shop-cms:
+    external: true
