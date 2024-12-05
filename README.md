@@ -30,7 +30,8 @@ AUTH0_CLIENT_ID=XXX
 AUTH0_CLIENT_SECRET=XXX
 ```
 4. Ask @Lake1824 to give you the values to those env vars
-4. Run the command `npm run dev`
-5. Navigate to http://localhost:3000/ to see the Next.JS website
-6. Ask @Lake1824 to make you a Auth0 account
+5. Run the comand `npm install`
+6. Run the command `npm run dev`
+7. Navigate to http://localhost:3000/ to see the Next.JS website
+8. Ask @Lake1824 to make you a Auth0 account
 
